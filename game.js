@@ -9,7 +9,7 @@ const randomWord = newWordList[Math.floor(Math.random() * newWordList.length)]
 
 
 //Display the chose random word
-document.querySelector("#rightGuesses").innerHTML = randomWord
+// document.querySelector("#rightGuesses").innerHTML = randomWord
 
 // replace characters of random word with "-"
 // let hiddenWord = randomWord.replaceAll('.', '-')
@@ -25,6 +25,9 @@ console.log(hidden)
 return hidden
 }
 const dashes = hiddenWord(randomWord)
+
+
+document.querySelector("#rightGuesses").innerHTML = dashes
 
 
 // Allow users to guess one letter at a time
