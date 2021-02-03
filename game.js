@@ -18,10 +18,14 @@ const randomWord = newWordList[Math.floor(Math.random() * newWordList.length)]
 
 function hiddenWord(str){
     let hidden = ''
-for ( var i = 0; i < str.length; i++) {
+for (let i = 0; i < str.length; i++) {
     hidden += '-'
+
 }
-console.log(hidden)
+// if statement based on user guess 
+
+
+// console.log(hidden)
 return hidden
 }
 const dashes = hiddenWord(randomWord)
@@ -51,11 +55,16 @@ document
     // console.log(userGuess)
     // check to see if newWordList includes the Userguess
         if(randomWord.includes(userGuess)){
-            console.log(userGuess)
+            // console.log(userGuess)
         }else {
           console.log('wrong guess')
             return undefined
         }
-    
-    
+    // have to change the return to be the user guess in its corresponding part among the dashes
+
+    if(randomWord.includes(userGuess)){
+        console.log(userGuess)
+        return  userGuess
+    }
   })
+  
