@@ -6,6 +6,7 @@ import { commonWords } from "./constants"
 const newWordList = commonWords.filter((commonWords) => commonWords.length >= 3)
 
 const randomWord = newWordList[Math.floor(Math.random() * newWordList.length)]
+console.log(randomWord)
 
 
 //Display the chose random word
@@ -18,19 +19,13 @@ const randomWord = newWordList[Math.floor(Math.random() * newWordList.length)]
 
 function hiddenWord(str){
     let hidden = ''
-for (let i = 0; i < str.length; i++) {
-    hidden += '-'
-
+    for (let i = 0; i < str.length; i++) {
+     hidden += '-'
 }
-// if statement based on user guess 
-
-
 // console.log(hidden)
 return hidden
 }
 const dashes = hiddenWord(randomWord)
-
-
 document.querySelector("#rightGuesses").innerHTML = dashes
 
 
@@ -54,17 +49,34 @@ document
     const userGuess = e.target.innerHTML
     // console.log(userGuess)
     // check to see if newWordList includes the Userguess
+
+    // let rightGuesses = 
+    function compileRightGuesses(){
         if(randomWord.includes(userGuess)){
-            // console.log(userGuess)
+            console.log(userGuess)
+            // return `${userGuess + document.querySelector("#newDashes").innerHTML}`
         }else {
           console.log('wrong guess')
             return undefined
         }
-    // have to change the return to be the user guess in its corresponding part among the dashes
-
-    if(randomWord.includes(userGuess)){
-        console.log(userGuess)
-        return  userGuess
+        
     }
-  })
+    compileRightGuesses()
+    
+    // have to change the return to be the user guess in its corresponding part among the dashes
+    // on click might be best to display none for dashes that appear when page loads
+    // maybe use str.split to get the random word into individual strings of its letters
+    // then replace the non matching charachters with '-' 
+    // then join em back up
+//    function updatedDashes(str){
+//        let  showing = ''
+//     for (let i = 0; i < str.length; i++){
+//         if(randomWord.includes(userGuess)){
+//         console.log(showing += '/userGuess/,str')
+
+//         // return  userGuess
+//         }
+//     }
+//     }
+ })
   
