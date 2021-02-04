@@ -54,7 +54,7 @@ document
     function compileRightGuesses(){
         if(randomWord.includes(userGuess)){
             console.log(userGuess)
-            // return `${userGuess + document.querySelector("#newDashes").innerHTML}`
+            return `${document.querySelector("#newDashes").innerHTML = userGuess + document.querySelector("#newDashes").textContent }`
         }else {
           console.log('wrong guess')
             return undefined
