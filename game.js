@@ -62,6 +62,20 @@ document
         
     }
     compileRightGuesses()
+
+    let button = e.target
+    
+    function removeButton (){
+        button.style.display = 'none'
+    }
+    removeButton()
+
+    // function hideshow() {
+    //    button.style.display = 'block'; 
+    //     this.style.display = 'none'
+    // }
+
+
     
     // have to change the return to be the user guess in its corresponding part among the dashes
     // on click might be best to display none for dashes that appear when page loads
