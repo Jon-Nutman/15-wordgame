@@ -17,6 +17,7 @@ console.log(randomWord)
 
 // instead of replacing maybe just make a new string and display none on the other
 
+
 function hiddenWord(str){
     let hidden = ''
     for (let i = 0; i < str.length; i++) {
@@ -26,7 +27,7 @@ function hiddenWord(str){
 return hidden
 }
 const dashes = hiddenWord(randomWord)
-document.querySelector("#rightGuesses").innerHTML = dashes
+document.querySelector("#oldDashes").innerHTML = dashes
 
 
 // Allow users to guess one letter at a time
@@ -53,6 +54,11 @@ document
     // let rightGuesses = 
     function compileRightGuesses(){
         if(randomWord.includes(userGuess)){
+            function removeOldDashes(){
+                let oldDashes = document.querySelector("#oldDashes")
+                oldDashes.style.display = 'none'
+            }
+            removeOldDashes()
             console.log(userGuess)
             return `${document.querySelector("#newDashes").innerHTML = userGuess + document.querySelector("#newDashes").textContent }`
         }else {
@@ -63,17 +69,13 @@ document
     }
     compileRightGuesses()
 
-    let button = e.target
-    
+   
+
     function removeButton (){
+        let button = e.target
         button.style.display = 'none'
     }
     removeButton()
-
-    // function hideshow() {
-    //    button.style.display = 'block'; 
-    //     this.style.display = 'none'
-    // }
 
 
     

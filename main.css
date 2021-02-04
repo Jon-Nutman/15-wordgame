@@ -3,3 +3,18 @@
   margin: 0;
   box-sizing: border-box;
 }
+#btnList{
+  display: inline;
+}
+
+.btn{
+  padding: 10px;
+}
+
+#oldDashes{
+  font-size: 50px;
+}
+
+#newDashes{
+  font-size: 50px;
+}
