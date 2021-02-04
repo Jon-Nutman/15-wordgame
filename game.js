@@ -42,7 +42,7 @@ const btns = "abcdefghijklmnopqrstuvwxyz"
 document.querySelector("#btnList").innerHTML = btns
 
 // make button return its innerHTML when clicked on
-
+let livesLeft = 8
 document
   .querySelector("#btnList")
   .addEventListener("click", function (e) {
@@ -50,8 +50,7 @@ document
     const userGuess = e.target.innerHTML
     // console.log(userGuess)
     // check to see if newWordList includes the Userguess
-
-    // let rightGuesses = 
+    
     function compileRightGuesses(){
         if(randomWord.includes(userGuess)){
             function removeOldDashes(){
@@ -62,14 +61,32 @@ document
             console.log(userGuess)
             return `${document.querySelector("#newDashes").innerHTML = userGuess + document.querySelector("#newDashes").textContent }`
         }else {
+            function removeFakeLives(){
+                let fakeLives = document.querySelector("#fakeLives")
+                fakeLives.style.display = 'none'
+            }
+            removeFakeLives()
           console.log('wrong guess')
-            return undefined
+          function takeLivesAway(){
+              livesLeft = livesLeft - 1
+          }
+          takeLivesAway()
+          console.log(livesLeft)
+            return livesLeft
         }
+        // function youLose(){
+        //     if(livesLeft = '0' || 0){
+        //         console.log('Congrats! You lose!')
+        //     }
+        //     youLose()
+        // }
+        
         
     }
-    compileRightGuesses()
 
-   
+    document.querySelector('#livesLeft').innerHTML = livesLeft
+    
+    compileRightGuesses()
 
     function removeButton (){
         let button = e.target
@@ -95,4 +112,3 @@ document
 //     }
 //     }
  })
-  
